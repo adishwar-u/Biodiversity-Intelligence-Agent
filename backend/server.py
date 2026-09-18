@@ -33,7 +33,9 @@ from agent.respond import build_recommendations, maybe_llm_intro
 
 app = FastAPI(title="Biodiversity Intelligence Agent API")
 
-FRONTEND_URL = os.environ.get("FRONTEND_URL")
+# Browsers send Origin without a trailing slash; strip one if it was pasted
+# into the env var, since allow_origins does an exact string match.
+FRONTEND_URL = os.environ.get("FRONTEND_URL", "").rstrip("/")
 
 app.add_middleware(
     CORSMiddleware,
