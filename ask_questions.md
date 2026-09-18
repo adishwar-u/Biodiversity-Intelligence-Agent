@@ -25,15 +25,15 @@ few and compare.
 2. `Degraded barren land in arid rajasthan, SOC 0.15%, rainfall 300mm, steep slope`
 3. `Grazing pasture in central highlands, SOC 0.4%, rainfall 900mm, flat land`
 4. `Rice cropland in the indo-gangetic plains, SOC 0.5%, rainfall 1000mm, gentle slope`
-5. `Forest land in the western ghats, SOC 1.2%, rainfall 2500mm, steep slope`
+5. `Degraded slope land in the western ghats foothills, SOC 0.6%, rainfall 1800mm, steep slope`
 6. `Maize farmland in coastal andhra, SOC 0.55%, rainfall 1100mm, moderate slope`
-7. `Grassland in north-east hills, SOC 1.0%, rainfall 2000mm, moderate slope`
+7. `Grassland in the eastern hills, SOC 0.8%, rainfall 800mm, moderate slope`
 8. `Eroded wasteland near a river in kutch, SOC 0.15%, rainfall low, flat`
 9. `Monoculture wheat cropland, semi-arid, SOC 0.3%, rainfall low` — *the brief's own worked example*
 10. `Cropland near a watershed, moderate slope, rainfall 650mm, SOC 0.35%` — *no region given, still works since region is optional*
 
-> **Worth comparing:** #5 (Western Ghats forest, high rainfall) vs.
-> #2 (arid Rajasthan, steep, degraded) — near-opposite conditions,
+> **Worth comparing:** #5 (Western Ghats, steep and high-rainfall) vs.
+> #2 (arid Rajasthan, steep, degraded) — near-opposite rainfall,
 > near-opposite recommendation sets.
 
 ## Multi-turn flows
@@ -47,3 +47,14 @@ questions and the "use typical values" fallback instead.
 12. `semi-arid deccan, not sure about the rest`
     → names a region, then auto-fills rainfall/SOC/land use from typical
     values for that zone.
+
+## Known limitation
+
+`land_use: forest` is a valid input (and `western ghats` / `north-east
+hills` region defaults even resolve to it), but no intervention in
+[interventions.json](backend/data/interventions.json) currently lists
+`forest` as a supported land use, so a forest profile always returns zero
+recommendations. Grassland interventions also cap out around 1600mm
+rainfall, below what the north-east hills default (2000mm) implies. Both
+are knowledge-base gaps, not bugs — fixing them means adding real,
+citation-backed interventions, not just relaxing the numbers.
