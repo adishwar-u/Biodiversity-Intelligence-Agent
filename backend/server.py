@@ -7,6 +7,7 @@ them, and there is no cross-process persistence).
 """
 from __future__ import annotations
 
+import os
 import uuid
 from typing import Optional
 
@@ -32,11 +33,16 @@ from agent.respond import build_recommendations, maybe_llm_intro
 
 app = FastAPI(title="Biodiversity Intelligence Agent API")
 
+FRONTEND_URL = os.environ.get("FRONTEND_URL")
+
 app.add_middleware(
     CORSMiddleware,
     # Matches any localhost/127.0.0.1 port, not just 5173 -- Vite falls back to
     # 5174, 5175, etc. whenever its default port is already taken.
     allow_origin_regex=r"http://(localhost|127\.0\.0\.1):\d+",
+    # Deployed frontend origin (e.g. the Vercel URL), set via env var since
+    # it isn't known at code-writing time.
+    allow_origins=[FRONTEND_URL] if FRONTEND_URL else [],
     allow_methods=["*"],
     allow_headers=["*"],
 )
