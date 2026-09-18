@@ -1,0 +1,369 @@
+[
+  {
+    "id": "farm_pond_bunding",
+    "name": "Contour bunding with farm pond",
+    "preconditions": {
+      "rainfall_mm": [200, 700],
+      "land_use": ["cropland", "degraded"],
+      "slope": ["gentle", "moderate"]
+    },
+    "effects": [
+      {"metric": "soil_moisture", "delta": "+18-30% in the root zone", "horizon": "short", "confidence": "high"},
+      {"metric": "groundwater_recharge", "delta": "+15-25% of intercepted runoff", "horizon": "medium", "confidence": "medium"},
+      {"metric": "amphibian_richness", "delta": "+2-5 species", "horizon": "medium", "confidence": "medium"}
+    ],
+    "tradeoffs": [
+      "Removes 3-5% of cultivable area for bunds and pond footprint",
+      "Mosquito breeding risk if pond water stagnates without fish or flow"
+    ],
+    "mechanism": "Contour bunds intercept overland runoff and route it to a farm pond, extending the infiltration window, raising the shallow water table and creating perennial microhabitat.",
+    "sources": [
+      {"title": "ICRISAT Watershed Development Impact Assessment", "org": "ICRISAT", "year": 2018, "locator": "watershed hydrology section"}
+    ]
+  },
+  {
+    "id": "legume_cover_crop",
+    "name": "Legume cover cropping between main-crop seasons",
+    "preconditions": {
+      "rainfall_mm": [400, 1200],
+      "land_use": ["cropland"],
+      "soil_organic_carbon": [0.0, 0.8]
+    },
+    "effects": [
+      {"metric": "soil_organic_carbon", "delta": "+15-25% relative increase over 2-3 years", "horizon": "medium", "confidence": "high"},
+      {"metric": "pest_natural_enemies", "delta": "moderate increase via added floral resources", "horizon": "short", "confidence": "medium"}
+    ],
+    "tradeoffs": [
+      "Seed and inoculant cost in the off-season with no direct cash return",
+      "Requires timely termination before main crop sowing or it competes for moisture"
+    ],
+    "mechanism": "Legume cover crops fix atmospheric nitrogen and add root and shoot biomass to the soil between cash-crop cycles, directly raising organic carbon inputs.",
+    "sources": [
+      {"title": "Soil Organic Carbon: the Hidden Potential", "org": "FAO", "year": 2017, "locator": "cover cropping chapter"}
+    ]
+  },
+  {
+    "id": "agroforestry_boundary_planting",
+    "name": "Agroforestry boundary and scattered-tree planting",
+    "preconditions": {
+      "rainfall_mm": [350, 1500],
+      "land_use": ["cropland", "pasture", "degraded"]
+    },
+    "effects": [
+      {"metric": "canopy_cover", "delta": "+5-15% at field scale", "horizon": "medium", "confidence": "high"},
+      {"metric": "bird_diversity", "delta": "+20-40% species count relative to treeless fields", "horizon": "long", "confidence": "medium"},
+      {"metric": "soil_temperature", "delta": "-3 to -6 C at soil surface under canopy", "horizon": "medium", "confidence": "medium"}
+    ],
+    "tradeoffs": [
+      "Tree roots and shade reduce yield of adjacent crop rows by 5-10%",
+      "8-10 year lag before full canopy and timber/fruit returns materialise"
+    ],
+    "mechanism": "Boundary and scattered trees add vertical structure and shade, lowering surface temperature and slowing organic matter mineralisation while creating nesting and foraging habitat.",
+    "sources": [
+      {"title": "Agroforestry and Biodiversity Conservation in Tropical Landscapes", "org": "World Agroforestry (ICRAF)", "year": 2019, "locator": "biodiversity outcomes section"}
+    ]
+  },
+  {
+    "id": "hedgerow_field_margins",
+    "name": "Hedgerow and field margin restoration",
+    "preconditions": {
+      "rainfall_mm": [300, 1600],
+      "land_use": ["cropland", "pasture"]
+    },
+    "effects": [
+      {"metric": "field_margin_habitat", "delta": "new corridor habitat along field edges", "horizon": "short", "confidence": "high"},
+      {"metric": "pest_natural_enemies", "delta": "+30-50% predatory arthropod abundance near margins", "horizon": "short", "confidence": "medium"},
+      {"metric": "species_richness", "delta": "measurable increase in plant and insect species pool", "horizon": "medium", "confidence": "medium"}
+    ],
+    "tradeoffs": [
+      "Loses 1-3% of field area to non-cropped margin strips",
+      "Needs periodic management or it can host crop pests as well as their enemies"
+    ],
+    "mechanism": "Semi-natural, undisturbed margins act as movement corridors between habitat patches and provide overwintering refuge for predatory and pollinating insects.",
+    "sources": [
+      {"title": "Landscape Corridors and Habitat Connectivity", "org": "IUCN", "year": 2016, "locator": "field margin case studies"}
+    ]
+  },
+  {
+    "id": "no_till_conservation_agriculture",
+    "name": "No-till / minimum-till conservation agriculture",
+    "preconditions": {
+      "rainfall_mm": [300, 1300],
+      "land_use": ["cropland"]
+    },
+    "effects": [
+      {"metric": "soil_organic_carbon", "delta": "+0.1-0.2% absolute over 5 years in the top 15cm", "horizon": "long", "confidence": "medium"},
+      {"metric": "soil_erosion", "delta": "-30-50% surface soil loss versus conventional tillage", "horizon": "short", "confidence": "high"}
+    ],
+    "tradeoffs": [
+      "Requires specialised no-till seeding equipment, a capital cost barrier",
+      "Early transition years can see higher weed pressure and herbicide reliance"
+    ],
+    "mechanism": "Leaving residue on the surface and avoiding inversion tillage protects topsoil from raindrop impact and slows the oxidation of soil organic matter.",
+    "sources": [
+      {"title": "Conservation Agriculture Research Programme", "org": "ICAR", "year": 2020, "locator": "tillage trial results"}
+    ]
+  },
+  {
+    "id": "rotational_grazing",
+    "name": "Rotational grazing with rest periods",
+    "preconditions": {
+      "rainfall_mm": [250, 900],
+      "land_use": ["pasture", "grassland"]
+    },
+    "effects": [
+      {"metric": "vegetation_structural_diversity", "delta": "increased sward height variation across paddocks", "horizon": "medium", "confidence": "medium"},
+      {"metric": "soil_organic_carbon", "delta": "+0.05-0.15% absolute over 5-8 years", "horizon": "long", "confidence": "medium"}
+    ],
+    "tradeoffs": [
+      "Needs fencing and water-point investment to subdivide paddocks",
+      "Requires active herd-movement labour or automation"
+    ],
+    "mechanism": "Resting paddocks between grazing bouts lets vegetation recover root reserves and canopy height before re-grazing, building root biomass and surface litter.",
+    "sources": [
+      {"title": "Rangeland Management and Livestock Productivity", "org": "CGIAR", "year": 2018, "locator": "grazing trial synthesis"}
+    ]
+  },
+  {
+    "id": "vermicompost_organic_amendment",
+    "name": "Vermicompost / farmyard manure amendment",
+    "preconditions": {
+      "rainfall_mm": [200, 1400],
+      "land_use": ["cropland", "degraded"],
+      "soil_organic_carbon": [0.0, 0.6]
+    },
+    "effects": [
+      {"metric": "soil_organic_carbon", "delta": "+10-20% relative increase within one season", "horizon": "short", "confidence": "high"}
+    ],
+    "tradeoffs": [
+      "Bulky input with real transport and labour cost at scale",
+      "Nutrient content is variable batch to batch unless tested"
+    ],
+    "mechanism": "Composted organic matter is added directly to soil, raising organic carbon and microbial activity faster than in-situ residue decomposition alone.",
+    "sources": [
+      {"title": "Organic Amendments and Soil Fertility", "org": "FAO", "year": 2017, "locator": "compost application rates"}
+    ]
+  },
+  {
+    "id": "mulching_residue_retention",
+    "name": "Crop residue mulching",
+    "preconditions": {
+      "rainfall_mm": [200, 1000],
+      "land_use": ["cropland"]
+    },
+    "effects": [
+      {"metric": "soil_moisture", "delta": "+10-20% retained between irrigations", "horizon": "short", "confidence": "high"},
+      {"metric": "soil_temperature", "delta": "-2 to -4 C at soil surface", "horizon": "short", "confidence": "medium"}
+    ],
+    "tradeoffs": [
+      "Residue has competing uses as fodder in mixed crop-livestock systems",
+      "Can harbour stem-borer pests if not managed between seasons"
+    ],
+    "mechanism": "A surface residue layer blocks direct solar radiation and reduces evaporative loss from the topsoil, buffering both moisture and temperature swings.",
+    "sources": [
+      {"title": "Conservation Agriculture Research Programme", "org": "ICAR", "year": 2020, "locator": "residue management trials"}
+    ]
+  },
+  {
+    "id": "check_dams_watershed",
+    "name": "Check dams for watershed treatment",
+    "preconditions": {
+      "rainfall_mm": [300, 900],
+      "land_use": ["degraded", "cropland"],
+      "slope": ["moderate", "steep"]
+    },
+    "effects": [
+      {"metric": "groundwater_recharge", "delta": "measurable rise in nearby open-well water levels within one monsoon", "horizon": "short", "confidence": "high"},
+      {"metric": "soil_erosion", "delta": "-20-40% sediment load in the treated micro-watershed", "horizon": "medium", "confidence": "medium"}
+    ],
+    "tradeoffs": [
+      "Upstream sediment trapping means downstream fields receive less silt renewal",
+      "Requires periodic desilting maintenance or storage capacity declines"
+    ],
+    "mechanism": "Small check structures across seasonal drainage lines slow flow velocity, letting suspended sediment settle and giving water more time to infiltrate.",
+    "sources": [
+      {"title": "ICRISAT Watershed Development Impact Assessment", "org": "ICRISAT", "year": 2018, "locator": "check dam recharge data"}
+    ]
+  },
+  {
+    "id": "native_tree_afforestation",
+    "name": "Native species afforestation of degraded land",
+    "preconditions": {
+      "rainfall_mm": [400, 2000],
+      "land_use": ["degraded"]
+    },
+    "effects": [
+      {"metric": "canopy_cover", "delta": "0% to 40-60% cover over a decade", "horizon": "long", "confidence": "high"},
+      {"metric": "species_richness", "delta": "substantial increase as native fauna recolonise", "horizon": "long", "confidence": "medium"},
+      {"metric": "soil_erosion", "delta": "-40-60% once canopy and litter layer establish", "horizon": "long", "confidence": "medium"}
+    ],
+    "tradeoffs": [
+      "5-7 years of near-zero productive return while trees establish",
+      "Wrong species choice (exotic monoculture) can suppress understory biodiversity instead of restoring it"
+    ],
+    "mechanism": "Restoring native tree cover rebuilds vertical habitat structure, litter inputs and root systems that stabilise soil, reversing the degradation pathway that removed them.",
+    "sources": [
+      {"title": "Forest Landscape Restoration and Biodiversity Outcomes", "org": "IUCN", "year": 2021, "locator": "native afforestation case studies"}
+    ]
+  },
+  {
+    "id": "intercropping_diversification",
+    "name": "Cereal-legume intercropping",
+    "preconditions": {
+      "rainfall_mm": [350, 1200],
+      "land_use": ["cropland"]
+    },
+    "effects": [
+      {"metric": "pollinator_abundance", "delta": "increase from extended, staggered flowering", "horizon": "short", "confidence": "medium"},
+      {"metric": "crop_yield_stability", "delta": "reduced total-yield variance across seasons", "horizon": "medium", "confidence": "medium"}
+    ],
+    "tradeoffs": [
+      "More complex planting, harvest and machinery logistics than monoculture",
+      "Requires matching maturity windows of the intercropped species"
+    ],
+    "mechanism": "Growing two crops with staggered flowering and rooting patterns extends floral resource availability and spreads climate risk across species.",
+    "sources": [
+      {"title": "Crop Diversification for Resilient Agriculture", "org": "FAO", "year": 2019, "locator": "intercropping yield stability"}
+    ]
+  },
+  {
+    "id": "wetland_restoration",
+    "name": "Farm wetland / seasonal pond restoration",
+    "preconditions": {
+      "rainfall_mm": [500, 2000],
+      "land_use": ["degraded", "cropland", "pasture"]
+    },
+    "effects": [
+      {"metric": "amphibian_richness", "delta": "+3-6 species within 2-3 breeding seasons", "horizon": "medium", "confidence": "high"},
+      {"metric": "species_richness", "delta": "broad increase via wetland-dependent taxa", "horizon": "medium", "confidence": "medium"}
+    ],
+    "tradeoffs": [
+      "Takes farmland out of production for the wetland footprint",
+      "Can increase human-wildlife conflict risk (e.g. waterbirds on adjacent crops)"
+    ],
+    "mechanism": "Re-wetting a seasonal depression restores breeding habitat for amphibians and a water source that anchors a wider wetland-associated food web.",
+    "sources": [
+      {"title": "Wetlands and Biodiversity: An Overview", "org": "Ramsar Convention Secretariat", "year": 2018, "locator": "restoration outcomes"}
+    ]
+  },
+  {
+    "id": "beetle_banks_pest_refugia",
+    "name": "Beetle banks / raised vegetated refugia",
+    "preconditions": {
+      "rainfall_mm": [300, 1200],
+      "land_use": ["cropland"]
+    },
+    "effects": [
+      {"metric": "pest_natural_enemies", "delta": "+40-70% overwintering predatory beetle density", "horizon": "short", "confidence": "high"}
+    ],
+    "tradeoffs": [
+      "Small but real loss of cropped area for the raised bank",
+      "Benefit is localised near the bank unless spaced through large fields"
+    ],
+    "mechanism": "A raised, tussocky grass strip through a field gives ground beetles and spiders a dry overwintering refuge close to the crop they later help protect.",
+    "sources": [
+      {"title": "Landscape Corridors and Habitat Connectivity", "org": "IUCN", "year": 2016, "locator": "in-field refugia studies"}
+    ]
+  },
+  {
+    "id": "silvopasture",
+    "name": "Silvopasture (integrating trees into grazing land)",
+    "preconditions": {
+      "rainfall_mm": [400, 1600],
+      "land_use": ["pasture", "grassland"]
+    },
+    "effects": [
+      {"metric": "canopy_cover", "delta": "+10-25% at pasture scale", "horizon": "long", "confidence": "medium"},
+      {"metric": "vegetation_structural_diversity", "delta": "added woody layer over the existing grass layer", "horizon": "medium", "confidence": "high"}
+    ],
+    "tradeoffs": [
+      "Reduces grazeable area by 10-20% under tree canopy",
+      "Requires temporary fencing to protect saplings from livestock"
+    ],
+    "mechanism": "Introducing scattered or alley-planted trees into grazing land adds a structural layer above the grass sward, providing shade and diversifying habitat.",
+    "sources": [
+      {"title": "Agroforestry and Biodiversity Conservation in Tropical Landscapes", "org": "World Agroforestry (ICRAF)", "year": 2019, "locator": "silvopasture systems"}
+    ]
+  },
+  {
+    "id": "drip_irrigation_water_efficiency",
+    "name": "Drip irrigation conversion",
+    "preconditions": {
+      "rainfall_mm": [150, 700],
+      "land_use": ["cropland"]
+    },
+    "effects": [
+      {"metric": "drought_resilience", "delta": "30-50% less water applied for comparable yield", "horizon": "short", "confidence": "high"}
+    ],
+    "tradeoffs": [
+      "High upfront capital cost for pipes, emitters and filtration",
+      "Emitters need regular maintenance to prevent clogging in hard water"
+    ],
+    "mechanism": "Delivering water directly to the root zone at low flow rates cuts evaporative and runoff losses that flood or furrow irrigation incurs.",
+    "sources": [
+      {"title": "Water Productivity in Agriculture", "org": "FAO", "year": 2020, "locator": "micro-irrigation efficiency data"}
+    ]
+  },
+  {
+    "id": "windbreak_shelterbelt",
+    "name": "Windbreak / shelterbelt planting",
+    "preconditions": {
+      "rainfall_mm": [200, 900],
+      "land_use": ["cropland", "degraded"]
+    },
+    "effects": [
+      {"metric": "soil_erosion", "delta": "-15-30% wind-driven topsoil loss in the sheltered zone", "horizon": "medium", "confidence": "medium"},
+      {"metric": "bird_diversity", "delta": "increase from added linear habitat", "horizon": "medium", "confidence": "medium"}
+    ],
+    "tradeoffs": [
+      "Shades and competes with crops within roughly one tree-height of the belt",
+      "Takes 3-5 years to reach effective wind-reduction height"
+    ],
+    "mechanism": "A planted tree line reduces wind speed for a distance of several times its height downwind, cutting wind erosion and moisture loss from exposed soil.",
+    "sources": [
+      {"title": "Forest Landscape Restoration and Biodiversity Outcomes", "org": "IUCN", "year": 2021, "locator": "shelterbelt case studies"}
+    ]
+  },
+  {
+    "id": "biochar_soil_amendment",
+    "name": "Biochar soil amendment",
+    "preconditions": {
+      "rainfall_mm": [300, 1500],
+      "land_use": ["cropland", "degraded"],
+      "soil_organic_carbon": [0.0, 0.7]
+    },
+    "effects": [
+      {"metric": "soil_organic_carbon", "delta": "+0.2-0.4% absolute, persisting over decades", "horizon": "long", "confidence": "medium"},
+      {"metric": "water_holding_capacity", "delta": "+10-15% in amended plots", "horizon": "medium", "confidence": "medium"}
+    ],
+    "tradeoffs": [
+      "Production requires a pyrolysis unit and a feedstock supply chain",
+      "Benefits are highly feedstock- and soil-type dependent, variable across sites"
+    ],
+    "mechanism": "Pyrolysed organic material is chemically stable in soil for long periods and its porous structure directly increases water and nutrient retention.",
+    "sources": [
+      {"title": "Biochar for Sustainable Soil Management", "org": "CGIAR", "year": 2019, "locator": "long-term field trial results"}
+    ]
+  },
+  {
+    "id": "riparian_buffer_restoration",
+    "name": "Riparian buffer strip restoration",
+    "preconditions": {
+      "rainfall_mm": [400, 2000],
+      "land_use": ["cropland", "pasture", "degraded"]
+    },
+    "effects": [
+      {"metric": "soil_erosion", "delta": "-30-50% sediment reaching the watercourse", "horizon": "medium", "confidence": "high"},
+      {"metric": "species_richness", "delta": "increase along the riparian corridor", "horizon": "medium", "confidence": "medium"},
+      {"metric": "field_margin_habitat", "delta": "new continuous corridor along the watercourse", "horizon": "short", "confidence": "high"}
+    ],
+    "tradeoffs": [
+      "Removes cropped or grazed land within the buffer width from production",
+      "Needs fencing to exclude livestock from the watercourse itself"
+    ],
+    "mechanism": "A vegetated strip along a watercourse filters sediment and nutrients from runoff before it reaches the water, while providing continuous corridor habitat.",
+    "sources": [
+      {"title": "Wetlands and Biodiversity: An Overview", "org": "Ramsar Convention Secretariat", "year": 2018, "locator": "riparian buffer function"}
+    ]
+  }
+]
